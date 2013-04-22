@@ -1,0 +1,47 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" language="javascript" >
+            var arreglo = [4, 1, 2, 5, 6, 6, 2, 5, 6, 7, 7, 1, 23, 4, 5, 7, 8, 8, 9, 2, 5, 6, 6, 7, 8],
+                    no_duplas = [],
+                    arreglo_nom = ['casa', 'aro', 'a', 'b', 'a', 'b', 'casa', 'aro'];
+            /*
+             * 
+             * @param Array a Arreglo que se va a quitar los duplicados
+             * @returns Array Regresa un areglo sin duplicados, tambien otro 
+             * beneficio es que si es numerico lo devuelve ordenado y con su 
+             * tipo original.
+             */
+            function mataDuplas(a) {
+                var tmp = [],i = 0,ln = a.length,res = [],type = '';
+                type = typeof(a[0]);
+                for (; i < ln; i++) {
+                    tmp[a[i]] = 1;
+                }
+                for (var j in tmp) {
+                    if (type === 'number')
+                        res.push(parseInt(j));
+                    else
+                        res.push(j);
+                }
+                return res;
+            }
+
+
+            no_duplas = mataDuplas(arreglo);
+            console.log(no_duplas);
+
+            console.log(mataDuplas(arreglo_nom));
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+    </body>
+</html>
